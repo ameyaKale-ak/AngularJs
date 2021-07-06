@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+    <head>
+        <title>Controller</title>
+        <script src="../app/angular.min.js"></script>
+        <script src="../app/app.js"></script>
+    </head>
+    <body>
+        <div ng-controller="myappController">
+            <p>{{message}}</p>
+            <br/>
+            <ul>
+                <li ng-repeat="x in array">{{x}}</li>
+            </ul>
+        </div>
+    </body>
+</html>
