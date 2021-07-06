@@ -1,0 +1,17 @@
+<!DOCTYPE html >
+<html ng-app="">
+    <head>
+        <title>Expressions</title>
+        <script src="../app/angular.min.js"></script>
+    </head>
+    <body ng-init="number=[1,2,3,4]">
+        <div >
+            <p >
+                Enter your name :<input type ="text" ng-model="name">
+            </p>
+            <p> Your name is {{name}}<!--expression--></p>
+            <p>5+10*3 is {{5+10*3}} </p>
+            <p>The 2nd element in number is {{number[1]}}</p>
+        </div>
+    </body>
+</html>
