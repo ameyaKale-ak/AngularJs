@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <title>NgShow</title>
+    <script src="../app/angular.min.js"></script>
+    <script src="../app/3app.js"></script>
+</head>
+
+<body>
+
+    <header ng-include="'7header.html'"></header>
+    <div ng-controller="mycontroller">
+        <p>{{message}}</p>
+        Seach Name: <input type="text" ng-model="search">
+        <br />
+        <ul>
+            <li ng-repeat="x in games | orderBy:'name' | filter: search " ng-show="!x.status">
+                {{x.name}}-{{x.rate | currency:'₹'}}
+            </li>
+        </ul>
+    </div>
+    <footer ng-include="'7footer.html'"></footer>
+
+</body>
+
+</html>

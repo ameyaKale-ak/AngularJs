@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+    <head>
+        <title>Filter</title>
+        <script src="../app/angular.min.js"></script>
+        <script src="../app/2app.js"></script>
+    </head>
+    <body>
+        <div ng-controller="myappController">
+            <p>{{message}}</p>
+            <br/>
+            Search Name :<input type="text" ng-model="search">
+            <ul>
+                <li ng-repeat="x in favCharacters | orderBy: '-Name' | filter: search ">
+                    {{x.Name}}-{{x.rate | currency :'₹'}}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
