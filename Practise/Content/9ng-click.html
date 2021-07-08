@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <title>ng-click</title>
+    <script src="../app/angular.min.js"></script>
+    <script src="../app/4app.js"></script>
+</head>
+
+<body>
+    <header ng-include="'7header.html'"></header>
+    <div ng-controller="mycontroller">
+        <p>{{message}}</p>
+        Search Name :<input type="text" ng-model="search">
+        <br />
+        <ul>
+            <li ng-repeat="x in array | filter:search | orderBy: order ">
+                {{x.name}} - {{x.rate | currency :'₹'}}
+                <div class="remove" ng-click="remove(x)">x</div>
+                <span class="belt" style="background: {{x.belt}}">{{x.belt}}</span>
+            </li>
+        </ul>
+        <button ng-click="order= 'name'">Order By Name</button>
+        <button ng-click="order= 'belt'">Order By Belt</button>
+    </div>
+    <footer ng-include="'7footer.html'"></footer>
+    <style>
+        ul {
+            padding: 0;
+            list-style-type: none;
+            margin: 30px 0;
+        }
+
+        li {
+            padding: 15px 0;
+            border-top: 1px solid #e2e2e2;
+            color: #444;
+        }
+
+        li span {
+            float: right;
+        }
+
+        .belt {
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin-left: 5px;
+            color: grey;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .remove {
+            float: right;
+            padding: 5px;
+            background: #fff;
+            width: 18px;
+            text-align: center;
+            border-radius: 20px;
+            color: crimson;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</body>
+
+</html>
