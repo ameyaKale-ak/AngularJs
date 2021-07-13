@@ -4,14 +4,14 @@ myapp.config(['$routeProvider',function($routeProvider){
 
     $routeProvider
                  .when('/home',{
-                     templateUrl :'/Practise/Content/11HomeView.html'
+                     templateUrl :'/Practise/views/11HomeView.html'
                  })
                  .when('/aboutUs',{
-                     templateUrl :'/Practise/Content/11AboutView.html',
+                     templateUrl :'/Practise/views/11AboutView.html',
                      controller :'mycontroller'
                  })
                  .when('/contactUs',{
-                     templateUrl :'/Practise/Content/11ContactUsView.html'
+                     templateUrl :'/Practise/views/11ContactUsView.html'
                  }).otherwise({
                      redirectTo:'/home'
                  });
